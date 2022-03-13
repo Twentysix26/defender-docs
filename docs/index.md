@@ -6,7 +6,7 @@ title: Overview
 
 Welcome to the documentation of Defender.  
 Defender is a big and complex cog but I promise that if you hang in there you could *just* make it ;)  
-It is recommend that you first read this page and then head to the [configuration guide](/configuration).
+It is recommend that you first read this page and then head to the [configuration guide](/defender-docs/configuration).
 
 ## What is Defender
 
@@ -55,7 +55,7 @@ graph TD
     | Voteout    | Starts a voting session to expel a user. This module was designed specifically for emergency mode so that when the staff is absent helper roles are still able to take care of things by themselves. |
 
 All these modules deliver notifications to your designed Defender *notification channel*.  
-For more information about how to effectively set up your server for Defender, see the [configuration guide](/configuration).
+For more information about how to effectively set up your server for Defender, see the [configuration guide](/defender-docs/configuration).
 
 ## Ranks
 

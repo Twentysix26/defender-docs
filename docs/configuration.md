@@ -37,7 +37,7 @@ It also serves as your guide when you set things up, as at the bottom of each se
   <figcaption>The [p]def status command</figcaption>
 </figure>
 
-As mentioned in the [Overview page](/), you can choose which functionalities you want to be active. In order to get things up and running, you have to decide which modules you want to use, set them up and toggle them on.  
+As mentioned in the [Overview page](/defender-docs/), you can choose which functionalities you want to be active. In order to get things up and running, you have to decide which modules you want to use, set them up and toggle them on.  
 Once you've done that (and fixed any general misconfiguration issue), you are ready to turn on Defender as a whole from the `[p]dset general` subgroup.
 
 If you are familiar with exploring Red's commands the configuration process should be relatively straightforward as long as you set time aside and ready up for some reading.
