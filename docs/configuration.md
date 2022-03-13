@@ -25,7 +25,7 @@ Assuming you have already installed and loaded the Defender cog, you are now rea
 
 !!! important
 
-    It's of paramount importance that you understand how [Ranks](/#ranks) work before configuring Defender.
+    It's of paramount importance that you understand how [Ranks](/defender-docs/#ranks) work before configuring Defender.
     As a general rule, you may want most if not all of the modules to **only target Rank 2 or below.**
 
 Consider the command `[p]def status` your central control panel for all things Defender.  
