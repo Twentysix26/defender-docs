@@ -1,0 +1,55 @@
+site_name: Defender documentation
+site_author: Twentysix
+site_url: https://twentysix26.github.io/defender-docs/
+copyright:  Copyright © 2020-present Twentysix (Twentysix26 @GitHub)
+theme:
+  name: material
+  logo: img/logo.svg
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+markdown_extensions:
+  - meta
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+nav:
+    - Introduction: '../'
+    - 'Configuration': 'configuration'
+    - 'Warden':
+      - 'Overview': '/defender-docs/warden/overview'
+      - 'Actions / conditions': '/defender-docs/warden/statements'
+      - 'Examples': '/defender-docs/warden/examples'
+extra_css:
+  - test.css
