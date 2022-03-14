@@ -4,7 +4,7 @@ title: Overview
 
 # Overview
 
-Welcome to the documentation of Defender.  
+Welcome to the documentation of [Defender](https://github.com/Twentysix26/x26-Cogs/).  
 Defender is a big and complex cog but I promise that if you hang in there you could *just* make it ;)  
 It is recommend that you first read this page and then head to the [configuration guide](/defender-docs/configuration).
 

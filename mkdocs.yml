@@ -53,3 +53,7 @@ nav:
       - 'Examples': '/defender-docs/warden/examples'
 extra_css:
   - test.css
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Twentysix26
