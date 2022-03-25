@@ -205,7 +205,7 @@ _Supported operators:_ `==`, `!=`, `contains`, `contains-pattern`, `>=`, `<=`, `
 ## Actions
 
 * `send-message`  
-Will send a message to the defined destination. Message editing is also supported. The message may include an embed. Please refer to the [examples](#sending-a-message) to understand its use.  
+Will send a message to the defined destination. Message editing is also supported. The message may include an embed. Please refer to the [examples](/defender-docs/warden/examples#sending-a-message) to understand its use.  
 **Accepts:** A map with the destination, the message's content and the embed. Or a list with 2 elements, destination and message content  
 **Context:** `Any`  
 * `set-user-nickname`  
@@ -245,7 +245,7 @@ Will assign to the user the "punish role" and deliver the "punish message" that 
 **Accepts:** Nothing  
 **Context:** `message`  
 * `notify-staff`  
-Will send a message to staff's notification channel. The message may include an embed. Please refer to the [examples](#notifying-the-staff) to understand its use.    
+Will send a message to staff's notification channel. The message may include an embed. Please refer to the [examples](/defender-docs/warden/examples#notifying-the-staff) to understand its use.    
 **Accepts:** A string representing the message to send. Or a map that describes the embed and all the behaviors of the notification.  
 **Context:** Any  
 * `send-mod-log`  
