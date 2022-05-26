@@ -237,7 +237,7 @@ For more informations see [context](#context)
   | `$guild_icon_url` | The guild's icon url |
   | `$guild_banner_url` | The guild's banner url |
   | `$user` | The user's name + the discriminator |
-  | `$user_name` | The user's name + the discriminator |
+  | `$user_name` | The user's name |
   | `$user_display` | The user's name or nickname, if one is set |
   | `$user_id` | The user's ID |
   | `$user_mention` | The user's mention |
