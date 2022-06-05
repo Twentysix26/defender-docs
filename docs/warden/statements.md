@@ -5,6 +5,8 @@ title: Warden - Actions / Conditions
 
 ## Conditions
 
+### Message conditions
+
 * `message-matches-any`  
 Is `true` if any of the patterns that you list are found in the message's content. This kind of searching might be inconvenient in certain use cases: if you prefer to look for whole words instead see the condition `message-contains-word`  
 **Accepts:** A list of patterns. Patterns can make use of wildcards such as `*` and `?`  
@@ -81,6 +83,9 @@ Will check if the message contains more than X emojis. **Important:** emojis wit
 Will check if the message contains more than X characters. Emojis and custom emojis will be considered a single character. Mentions, both users and channels, are counted too.  
 **Accepts:** A number representing the number of characters.  
 **Context:** `message`  
+
+### User conditions
+
 * `user-id-matches-any`  
 Is `true` if any of the IDs that you list match the user's ID  
 **Accepts:** A list of IDs (numbers)  
@@ -133,6 +138,9 @@ Will check if the user has sent less than X messages in the server. **Important:
 Will check if the user is the specified rank. This condition allows for *rank-specific* Warden rules and grants more granular control compared to the standard `rank` parameter, which merely indicates the maximum rank a rule will have effect on.  
 **Accepts:** A number representing the rank the user must belong to  
 **Context:** `user`  
+
+### Channel conditions
+
 * `channel-matches-any`  
 Will check if the message was sent in any of the specified channels.  
 **Accepts:** A list of channel names or IDs  
@@ -146,10 +154,16 @@ Will check if the channel in which the message was sent belongs to any of the sp
 Will check if the message was sent in a publicly viewable channel.  
 **Accepts:** A bool (true or false)    
 **Context:** `message`  
+
+### Server conditions
+
 * `in-emergency-mode`  
 Will check if the server is in emergency mode, either manual or automatic  
 **Accepts:** A bool (true or false)    
 **Context:** Any  
+
+### Roles conditions
+
 * `user-has-any-role-in`  
 Is `true` if the user belongs to any of these roles in the list  
 **Accepts:** A list of role names or IDs  
@@ -163,6 +177,9 @@ Will check if the user is a staff member
 Will check if the user is a Defender helper  
 **Accepts:** A bool (true or false)    
 **Context:** `user`  
+
+### Heat conditions
+
 * `user-heat-is`  
 Is `true` if the user has the specified [heat level](#heat-level)  
 **Accepts:** A number between 0 and 100    
@@ -187,6 +204,9 @@ Is `true` if the [custom heat](/defender-docs/warden/overview#custom-heat-level)
 Is `true` if the [custom heat](/defender-docs/warden/overview#custom-heat-level) exceeds the specified level  
 **Accepts:** A list with two elements: the custom heat level name and a number between 0 and 100. Rule name and IDs [context variables](/defender-docs/warden/overview#context-variables) are available for the name.  
 **Context:** `Any`
+
+### Custom conditions
+
 * `compare`  
 Compares two values. Supports a variety of operators, textual and numeric. The comparison is case sensitive. This is most useful when used in conjunction with context variables. Using numeric operators with non-numeric values will raise an error.  
 _Supported operators:_ `==`, `!=`, `contains`, `contains-pattern`, `>=`, `<=`, `<`, `>`  
