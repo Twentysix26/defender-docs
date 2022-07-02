@@ -420,6 +420,35 @@ Assigns a random value to a variable, picking one from a list of choices. Suppor
        pear: 2
     evaluate: false # (optional, if true any context variable contained in value will be evaluated)
 ```
+* `var-assign-heat`  
+Assigns a heat level value to a variable. Supports all kinds of heat levels.
+```yaml
+- add-user-heatpoints: [2, 10 minutes]
+- add-channel-heatpoints: [3, 10 minutes]
+- add-custom-heatpoints: [example, 4, 10 minutes]
+- var-assign-heat: [u_heat, user_heat] # Assigns user's heat to the variable u_heat
+- var-assign-heat: [ch_heat, channel_heat] # Assigns channel's heat to the variable ch_heat
+- var-assign-heat: [cu_heat, example] # Assigns custom heat "example" to the variable cu_heat
+
+- send-to-monitor: "Custom heat level 'example': $cu_heat" # Displays the custom heat level "example"
+
+- var-math: [result, "$u_heat", "+", "$ch_heat"] # Calculates the sum of user heat and channel heat
+- send-to-monitor: "This is the sum of user and channel heat levels: $result"
+```
+* `var-math`  
+Allows to perform mathematical operations with up to two operands. Supports context variables.  
+Supported operators: +, -, *, /, pow, abs, floor, ceil, trunc
+```yaml
+- var-math: [re, 1, "+", 1] # var re equals to 2
+- var-math: [re, 2, "*", 3] # var re equals to 6
+- var-math: [re, -5, "abs"] # var re equals to 5
+- var-math: [re, 5.1, "ceil"] # var re equals to 6
+- var-math: [re, 2.26, "trunc"] # var re equals to 2
+
+- var-assign: [op1, 52]
+- var-assign: [op2, 2]
+- var-math: [re, "$op1", "/", "$op2"] # var re equals to 26.0
+```
 * `var-split`  
 Splits a variable into parts, using separator as the delimiter, and assigns the parts to different variables. If there are more parts than provided variables, the remaining parts will be discarded. If there are fewer parts than provided variables, an empty string will be assigned to the remaining variables. Maximum splits can be specified, by default there is no limit. 
 ```yaml

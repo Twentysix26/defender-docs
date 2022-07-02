@@ -214,10 +214,18 @@ do:
   | `on-message-delete` | A message is deleted   | message, user |
   | `on-user-join` | A new user joins the server | user |
   | `on-user-leave` | A user leaves the server | user |
+  | `on-role-add` | A role is assigned to a user | user |
+  | `on-role-remove` | A role is removed from a user | user |
+  | `on-reaction-add` | A user added a reaction | message, user |
+  | `on-reaction-remove` | A reaction is removed from a message. 'User' will always be the messages' original author. | message, user |
   | `on-emergency` | The server enters a state of emergency, either automatic or manual | none |
   | `manual` | The rule is manually run by an admin with `[p]defender warden run` | user |
   | `periodic` | The rule runs periodically, as defined by its own `run-every` parameter.<br>The interval can be set between 5 minutes and 24 hours.<br>See more info about [periodic rules](#periodic-rules) | user |
 
+!!! important
+
+    The reaction events only work for cached messages. This means that messages that are too old or predate your bot's last boot will not trigger these events.
+    Events that work for non cached messages may be added in a future update.
 
 ## Deprecated syntax
 The following syntax is deprecated: while there are currently no plans to remove old Warden syntax it is recommended that you switch to the recommended alternatives as soon as possible. It is not possible to create new rules with deprecated syntax.  
@@ -251,6 +259,7 @@ For more informations see [context](#context)
   | `$message_id` | The message's ID |
   | `$message_created_at` | The date and time in which the message was created |
   | `$message_link` | The URL pointing to the message |
+  | `$message_reaction` | In a `on-reaction-*` event this contains the reaction that triggered it |
   | `$attachment_filename` | The message attachment's filename, if any |
   | `$attachment_url` | The message attachment's url, if any |
   | `$channel` | The channel's name in the form of #channel_name |
@@ -260,3 +269,7 @@ For more informations see [context](#context)
   | `$channel_category` | The channel category's name, if any |
   | `$channel_category_id` | The channel category's id, if any |
   | `$channel_heat` | The channel's [heat level](#heat-level) |
+  | `$role_id` | The role's id in a `on-role-*` event |
+  | `$role_name` | The role's name in a `on-role-*` event |
+  | `$role_mention` | The role's mention in a `on-role-*` event |
+  | `$role_added` | Equals to 'true' in `on-role-add`, 'false' in `on-role-remove` |
