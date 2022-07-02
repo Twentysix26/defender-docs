@@ -5,6 +5,8 @@ title: Warden - Actions / Conditions
 
 ## Conditions
 
+### Message conditions
+
 * `message-matches-any`  
 Is `true` if any of the patterns that you list are found in the message's content. This kind of searching might be inconvenient in certain use cases: if you prefer to look for whole words instead see the condition `message-contains-word`  
 **Accepts:** A list of patterns. Patterns can make use of wildcards such as `*` and `?`  
@@ -81,6 +83,9 @@ Will check if the message contains more than X emojis. **Important:** emojis wit
 Will check if the message contains more than X characters. Emojis and custom emojis will be considered a single character. Mentions, both users and channels, are counted too.  
 **Accepts:** A number representing the number of characters.  
 **Context:** `message`  
+
+### User conditions
+
 * `user-id-matches-any`  
 Is `true` if any of the IDs that you list match the user's ID  
 **Accepts:** A list of IDs (numbers)  
@@ -133,6 +138,9 @@ Will check if the user has sent less than X messages in the server. **Important:
 Will check if the user is the specified rank. This condition allows for *rank-specific* Warden rules and grants more granular control compared to the standard `rank` parameter, which merely indicates the maximum rank a rule will have effect on.  
 **Accepts:** A number representing the rank the user must belong to  
 **Context:** `user`  
+
+### Channel conditions
+
 * `channel-matches-any`  
 Will check if the message was sent in any of the specified channels.  
 **Accepts:** A list of channel names or IDs  
@@ -146,10 +154,16 @@ Will check if the channel in which the message was sent belongs to any of the sp
 Will check if the message was sent in a publicly viewable channel.  
 **Accepts:** A bool (true or false)    
 **Context:** `message`  
+
+### Server conditions
+
 * `in-emergency-mode`  
 Will check if the server is in emergency mode, either manual or automatic  
 **Accepts:** A bool (true or false)    
 **Context:** Any  
+
+### Roles conditions
+
 * `user-has-any-role-in`  
 Is `true` if the user belongs to any of these roles in the list  
 **Accepts:** A list of role names or IDs  
@@ -163,6 +177,9 @@ Will check if the user is a staff member
 Will check if the user is a Defender helper  
 **Accepts:** A bool (true or false)    
 **Context:** `user`  
+
+### Heat level conditions
+
 * `user-heat-is`  
 Is `true` if the user has the specified [heat level](#heat-level)  
 **Accepts:** A number between 0 and 100    
@@ -187,6 +204,9 @@ Is `true` if the [custom heat](/defender-docs/warden/overview#custom-heat-level)
 Is `true` if the [custom heat](/defender-docs/warden/overview#custom-heat-level) exceeds the specified level  
 **Accepts:** A list with two elements: the custom heat level name and a number between 0 and 100. Rule name and IDs [context variables](/defender-docs/warden/overview#context-variables) are available for the name.  
 **Context:** `Any`
+
+### Custom conditions
+
 * `compare`  
 Compares two values. Supports a variety of operators, textual and numeric. The comparison is case sensitive. This is most useful when used in conjunction with context variables. Using numeric operators with non-numeric values will raise an error.  
 _Supported operators:_ `==`, `!=`, `contains`, `contains-pattern`, `>=`, `<=`, `<`, `>`  
@@ -208,6 +228,9 @@ _Supported operators:_ `==`, `!=`, `contains`, `contains-pattern`, `>=`, `<=`, `
 Will send a message to the defined destination. Message editing is also supported. The message may include an embed. Please refer to the [examples](/defender-docs/warden/examples#sending-a-message) to understand its use.  
 **Accepts:** A map with the destination, the message's content and the embed. Or a list with 2 elements, destination and message content  
 **Context:** `Any`  
+
+### User actions
+
 * `set-user-nickname`  
 Will change the nickname of a user  
 **Accepts:** A string representing the new nickname to set. Supports context variables.  
@@ -244,26 +267,6 @@ Will assign to the user the "punish role" that has been set in Defender
 Will assign to the user the "punish role" and deliver the "punish message" that have been set in Defender (see `[p]dset general`)  
 **Accepts:** Nothing  
 **Context:** `message`  
-* `notify-staff`  
-Will send a message to staff's notification channel. The message may include an embed. Please refer to the [examples](/defender-docs/warden/examples#notifying-the-staff) to understand its use.    
-**Accepts:** A string representing the message to send. Or a map that describes the embed and all the behaviors of the notification.  
-**Context:** Any  
-* `send-mod-log`  
-Will create a new mod-log case of the last expel action issued by the rule  
-**Accepts:** A string representing the reason of the expel action. Supports context variables.  
-**Context:** Any  
-* `set-channel-slowmode`  
-Will set (or deactivate) slowmode of the channel in the context's message  
-**Accepts:** A string representing the slowmode time. Some examples: '5 seconds', '2 minutes', '4 hours'. '0 seconds' will deactivate slowmode.   
-**Context:** `message`  
-* `enable-emergency-mode`  
-Will toggle emergency mode  
-**Accepts:** A bool (true or false), representing whether emergency mode should be enabled or disabled  
-**Context:** Any  
-* `send-to-monitor`  
-Will send a message to Defender's monitor, `[p]defender monitor`  
-**Accepts:** A string representing the message to send. Supports context variables.  
-**Context:** Any  
 * `get-user-info`  
 Gets an attribute from an arbitrary user and assigns it to a variable. Many of the [standard discord.py Member attributes](https://discordpy.readthedocs.io/en/latest/api.html#discord.Member) are supported.  
 Additionally, the attributes  
@@ -288,14 +291,35 @@ If the user cannot be found an error will be raised.
        staff: is_staff
        helper: is_helper
 ```
-* `no-op`  
-Does nothing. Useful only for testing a rule's conditions with `[p]defender warden run`  
-**Accepts:** Nothing  
+
+### Staff notifications
+
+* `notify-staff`  
+Will send a message to staff's notification channel. The message may include an embed. Please refer to the [examples](/defender-docs/warden/examples#notifying-the-staff) to understand its use.    
+**Accepts:** A string representing the message to send. Or a map that describes the embed and all the behaviors of the notification.  
 **Context:** Any  
-* `exit`  
-Interrupts the rule's processing, not carrying on any further action. This is useful when used in conjunction with conditional actions.  
-**Accepts:** Nothing  
+* `send-mod-log`  
+Will create a new mod-log case of the last expel action issued by the rule  
+**Accepts:** A string representing the reason of the expel action. Supports context variables.  
 **Context:** Any  
+* `send-to-monitor`  
+Will send a message to Defender's monitor, `[p]defender monitor`  
+**Accepts:** A string representing the message to send. Supports context variables.  
+**Context:** Any  
+
+### Server actions
+
+* `set-channel-slowmode`  
+Will set (or deactivate) slowmode of the channel in the context's message  
+**Accepts:** A string representing the slowmode time. Some examples: '5 seconds', '2 minutes', '4 hours'. '0 seconds' will deactivate slowmode.   
+**Context:** `message`  
+* `enable-emergency-mode`  
+Will toggle emergency mode  
+**Accepts:** A bool (true or false), representing whether emergency mode should be enabled or disabled  
+**Context:** Any  
+
+### Heat level actions
+
 * `add-user-heatpoint`  
 Adds a single heat point with the specified lifetime to the user's [heat level](#heat-level)  
 **Accepts:** A string representing the heat point's lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'  
@@ -338,6 +362,17 @@ Sets the channel's [heat level](#heat-level) to 0
 Sets the specified [custom heat level](/defender-docs/warden/overview#custom-heat-level) to 0  
 **Accepts:** A string representing the [custom heat level](/defender-docs/warden/overview#custom-heat-level) name. Rule name and IDs [context variables](/defender-docs/warden/overview#context-variables) are available for the name.  
 **Context:** `Any`  
+
+### Various actions
+
+* `no-op`  
+Does nothing. Useful only for testing a rule's conditions with `[p]defender warden run`  
+**Accepts:** Nothing  
+**Context:** Any  
+* `exit`  
+Interrupts the rule's processing, not carrying on any further action. This is useful when used in conjunction with conditional actions.  
+**Accepts:** Nothing  
+**Context:** Any  
 * `issue-command`  
 Will issue a bot command as if it was issued by the specified user. The specified user must be the rule's author. If no destination is specified issuing a command in a `message` context will make it issue in the same channel as the message's; in any other case the command will be issued in Defender's notification channel.  
 **Accepts:** A list with two elements: a number representing the ID of the rule's author and a string representing the command to issue. The command must not contain the prefix. [Context variables](/defender-docs/warden/overview#context-variables) are supported. The long form of this action also supports a destination.  
