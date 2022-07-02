@@ -178,7 +178,7 @@ Will check if the user is a Defender helper
 **Accepts:** A bool (true or false)    
 **Context:** `user`  
 
-### Heat conditions
+### Heat level conditions
 
 * `user-heat-is`  
 Is `true` if the user has the specified [heat level](#heat-level)  
@@ -318,7 +318,7 @@ Will toggle emergency mode
 **Accepts:** A bool (true or false), representing whether emergency mode should be enabled or disabled  
 **Context:** Any  
 
-### Heatpoint actions
+### Heat level actions
 
 * `add-user-heatpoint`  
 Adds a single heat point with the specified lifetime to the user's [heat level](#heat-level)  
