@@ -25,7 +25,7 @@ And now let's break this down.
 
 - `name` is the name of this rule. Every rule that you add will have an unique name to tell them apart. If you try to add a rule with a name that is already registered a confirmation will be asked before proceeding with overwrite.
 - `rank` is the highest rank that this rule will target. As explained in `[p]defender status`, Rank 1 is the highest rank there is. This means that every message that is sent will be targeted, even staff's.
-- `event` is *when* this rule will enter into effect. There are currently 5 [events](#events) available.
+- `event` is *when* this rule will enter into effect. You can find the complete [event list](#events) below.
    A rule can also be defined with multiple events by using a list, example: `[on-message, on-message-edit]`
 - `if` is the section where the [conditions](/defender-docs/warden/statements#conditions) are defined. It supports both basic condition and special condition blocks (we'll get to that later). Every condition (and condition block) must resolve to `true` for the rule's action to be executed.  
 - `do` is the section where the [actions](/defender-docs/warden/statements#actions) are defined. Actions are ordered and will be executed in the order you have defined them. If one of them errors out for whatever reason, the action's execution will stop. You can monitor errors in `[p]defender monitor`.
@@ -79,7 +79,7 @@ do:
   - ban-user-and-delete: 1
   - send-mod-log: "Usage of the S word is not welcome in this community. Begone, $user."
 ```
-This is how a condition block is structured: it contains basic conditions. To prevent too much complexity nested condition blocks are not allowed.  
+This is how a condition block is structured: it contains basic conditions.  
 In our case here *if* the author's of a message has the word spider in their username/nickname *OR* their message contains the word spider *AND* at the same time hasn't joined less than **2** hours ago and is also not a staff member *then* they will be banned and all the messages sent by them in the last day will be deleted.  
 Additionally, a mod-log entry for this last ban will be posted, condemning the author of this unspeakable crime for everyone to see.  
 Our Orwellian quest of never ever allowing the S word to be used in our community again is now completed.
@@ -203,6 +203,29 @@ do:
   - if-true: # if they did, ban them
       - ban-user-and-delete: 0
   - delete-user-message: # and proceed to delete the message in any case, ban or not
+```
+### Nesting
+Starting from Defender v1.12 you can make rules with nested condition blocks. This allows to define conditions with much greater complexity.  
+An example:
+
+```yaml
+rank: 1
+name: dehoister
+event: [periodic, on-user-join]
+run-every: 5 minutes
+if:
+  - is-staff: false # Ignore staff members
+  - if-any: # Check if the user has either...
+     - nickname-matches-any: ["!*"] # (A) a hoisting nickname
+     - if-all:
+        - username-matches-any: ["!*"] # (B1) or a hoisting username ...
+        - if-not:
+            - nickname-matches-any: ["*"] # ... (B2) with no nickname already set
+  - if-not: # They also need NOT to be...
+     - user-has-any-role-in: ["Patron"] # (1) ... a Patron member
+     - nickname-matches-any: ["dehoisted"] # (2) ... and not already dehoisted
+do:
+  - set-user-nickname: "dehoisted"
 ```
 
 ## Events
