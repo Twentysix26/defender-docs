@@ -134,7 +134,7 @@ graph TB
   style D fill:#ff8166,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
 ```
 
-As you can see, Warden checks are the last thing that gets evaluated before taking action on the user. And they can be any combination of [conditions](warden/statements/#conditions) and [condition blocks](/warden/overview/#defining-a-more-complex-rule). A few examples:
+As you can see, Warden checks are the last thing that gets evaluated before taking action on the user. And they can be any combination of [conditions](warden/statements/#conditions) and [condition blocks](warden/overview/#defining-a-more-complex-rule). A few examples:
 
 ```yaml
 - channel-matches-any: [general] # Only work in the general channel
@@ -145,9 +145,10 @@ As you can see, Warden checks are the last thing that gets evaluated before taki
 ```
 
 ```yaml
-- if-not: # Exclude the spam channel and users with spammer role
-  - channel-matches-any: [spam]
+- if-not: # Users with the spammer role can spam everywhere
   - user-has-any-role-in: [spammer]
+- if-not: # Users can only spam in the spam channel
+  - channel-matches-any: [spam]
 ```
 
 Warden checks can be set in the settings subcommands of each module  
