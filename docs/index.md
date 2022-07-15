@@ -108,3 +108,56 @@ It is possible to act on Defender's standard notifications by reacting on them. 
 !!! tip
 
     On your Discord client you can favorite the emoji of your most used actions with alt+click
+
+## Warden checks
+
+:sparkles: *New in v1.13* :sparkles:
+
+!!! note
+
+    Warden checks require a basic understanding of the Warden automodule. If you feel lost, it might be better to [read its docs](warden/overview) first.
+
+Each Defender's module has a number of settings. Most, for example, let you set the highest rank to target. However, what if you want a certain module to only work in channels A and B or only target users with role Y and Z?  
+This is where **Warden checks** can help. Warden checks leverage the flexibility of the [Warden](warden/overview) engine to give you greater control over each module. They are custom sets of conditions (that *you* can define) that get evaluated after all the other checks have been done.  
+To better illustrate this, let's see in simple terms how the Invite Filter automodule would work:
+
+``` mermaid
+graph TB
+  A[A message containing<br>an invite has been sent] <--> B{Is the message's<br>author staff?};
+  B --> | No | C{Is the message's<br>author below rank X?}
+  C --> | Yes | D{Are the custom<br>Warden checks satisfied?}
+  D --> | Yes | E[Take action on<br>the author]
+  F[Do nothing]
+  B --> | Yes | F
+  C --> | No | F
+  D --> | No | F
+  style D fill:#ff8166,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+```
+
+As you can see, Warden checks are the last thing that gets evaluated before taking action on the user. And they can be any combination of [conditions](warden/statements/#conditions) and [condition blocks](/warden/overview/#defining-a-more-complex-rule). A few examples:
+
+```yaml
+- channel-matches-any: [general] # Only work in the general channel
+```
+
+```yaml
+- channel-is-public: true # Only work in public channels
+```
+
+```yaml
+- if-not: # Exclude the spam channel and users with spammer role
+  - channel-matches-any: [spam]
+  - user-has-any-role-in: [spammer]
+```
+
+Warden checks can be set in the settings subcommands of each module  
+e.g.
+```yaml
+### To set them ###
+[p]dset invitefilter wdchecks
+- channel-is-public: true
+### Display them ###
+[p]dset invitefilter wdchecks
+### Remove them ###
+[p]dset invitefilter wdchecks remove
+```
