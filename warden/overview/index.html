@@ -1,0 +1,959 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Twentysix">
+      
+      
+        <link rel="canonical" href="https://twentysix26.github.io/defender-docs/warden/overview/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Warden - Overview - Defender documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../test.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Defender documentation" class="md-header__button md-logo" aria-label="Defender documentation" data-md-component="logo">
+      
+  <img src="../../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Defender documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Warden - Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Defender documentation" class="md-nav__button md-logo" aria-label="Defender documentation" data-md-component="logo">
+      
+  <img src="../../img/logo.svg" alt="logo">
+
+    </a>
+    Defender documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Warden
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Warden" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Warden
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/defender-docs/warden/overview" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/defender-docs/warden/statements" class="md-nav__link">
+        Actions / conditions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/defender-docs/warden/examples" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-introduction-to-warden" class="md-nav__link">
+    An introduction to Warden
+  </a>
+  
+    <nav class="md-nav" aria-label="An introduction to Warden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-format-a-basic-example" class="md-nav__link">
+    Rule format: a basic example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-a-more-complex-rule" class="md-nav__link">
+    Defining a more complex rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-quick-recap" class="md-nav__link">
+    A quick recap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-notes" class="md-nav__link">
+    Final notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    Advanced features
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#execution-order" class="md-nav__link">
+    Execution order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heat-level" class="md-nav__link">
+    Heat level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-heat-level" class="md-nav__link">
+    Custom heat level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#periodic-rules" class="md-nav__link">
+    Periodic rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-actions" class="md-nav__link">
+    Conditional actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nesting" class="md-nav__link">
+    Nesting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deprecated-syntax" class="md-nav__link">
+    Deprecated syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-variables" class="md-nav__link">
+    Context variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="overview">Overview</h1>
+<h2 id="an-introduction-to-warden">An introduction to Warden</h2>
+<p>Warden is the most versatile module that you can find in Defender.<br />
+It allows you to define custom rules by combining a rich set of events, conditions and actions.<br />
+Need to filter messages only in certain channels? Or maybe rename people meeting very specific requirements? Warden got you covered!</p>
+<h3 id="rule-format-a-basic-example">Rule format: a basic example</h3>
+<p>Rules can be written in the YAML language and must be structured in a very specific way to be deemed a valid rule.<br />
+Let's start with a basic scenario: you have an innate fear of spiders and you wish to delete any message that mentions them.<br />
+So, without further ado, you add this rule through <code>[p]defender warden add</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spiders-are-spooky</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">on-message</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*spider*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">delete-user-message</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+And now let's break this down.  </p>
+<ul>
+<li><code>name</code> is the name of this rule. Every rule that you add will have an unique name to tell them apart. If you try to add a rule with a name that is already registered a confirmation will be asked before proceeding with overwrite.</li>
+<li><code>rank</code> is the highest rank that this rule will target. As explained in <code>[p]defender status</code>, Rank 1 is the highest rank there is. This means that every message that is sent will be targeted, even staff's.</li>
+<li><code>event</code> is <em>when</em> this rule will enter into effect. You can find the complete <a href="#events">event list</a> below.
+   A rule can also be defined with multiple events by using a list, example: <code>[on-message, on-message-edit]</code></li>
+<li><code>if</code> is the section where the <a href="/defender-docs/warden/statements#conditions">conditions</a> are defined. It supports both basic condition and special condition blocks (we'll get to that later). Every condition (and condition block) must resolve to <code>true</code> for the rule's action to be executed.  </li>
+<li><code>do</code> is the section where the <a href="/defender-docs/warden/statements#actions">actions</a> are defined. Actions are ordered and will be executed in the order you have defined them. If one of them errors out for whatever reason, the action's execution will stop. You can monitor errors in <code>[p]defender monitor</code>.</li>
+</ul>
+<p>The condition <code>message-matches-any</code> takes the message in the <em>context</em> and analyzes its content. Here we have put the word spider surrounded by the wildcard <code>*</code>: this means that the word spider simply being present in a message is enough for this condition to pass.</p>
+<p>As you may have noticed the action <code>delete-user-message</code> doesn't need any parameter: it simply deletes the message in the context.  </p>
+<h3 id="context">Context</h3>
+<p>Events have a context. <code>on-message</code> for example, will have <code>message</code> and <code>user</code> (the message author's) available, so any condition and action that is bound to analyze or take action on a message will be allowed to be used in that rule.<br />
+A rule with the condition <code>message-matches-any</code> combined with the event <code>on-user-join</code> will be rejected: Warden doesn't have a message to analyze in this event, therefore the rule will be simply deemed invalid.<br />
+Depending on the context you will have certain <a href="#context-variables">context variables</a> available: there are some special actions that accept these variables in their parameters.<br />
+Example:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">send-mod-log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;No</span><span class="nv"> </span><span class="s">particular</span><span class="nv"> </span><span class="s">reason:</span><span class="nv"> </span><span class="s">I</span><span class="nv"> </span><span class="s">just</span><span class="nv"> </span><span class="s">really</span><span class="nv"> </span><span class="s">dislike</span><span class="nv"> </span><span class="s">$user.&quot;</span><span class="w"></span>
+</code></pre></div>
+If the user in context is called HairySpider#9999 Warden will post a mod-log entry as<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>No particular reason: I just really dislike HairySpider#9999.
+</code></pre></div></p>
+<h3 id="defining-a-more-complex-rule">Defining a more complex rule</h3>
+<p>This first rule was very basic. What if, instead, we wanted to outright <strong>ban</strong> any user that mentions spiders <em>OR</em> has the word spider in their username/nickname, like our friend HairySpider#9999?<br />
+But, since we are also hindered by a conscience, we want to give new users time to read the #rules channel, so we'll make sure to only punish infidels who are knowingly breaking the rules.<br />
+Finally, the ruling class, staff members, must be free to discuss the enemy of the state without ever getting banned themselves.<br />
+Wow, this got complicated fast huh? Luckily this is where <em>condition blocks</em> come to our aid.  </p>
+<p>At the time of writing there are three condition blocks:</p>
+<ul>
+<li><code>if-any</code></li>
+<li><code>if-all</code></li>
+<li><code>if-not</code>  </li>
+</ul>
+<p>When a rule is processed, conditions blocks are individually resolved to <strong>true</strong> or <strong>false</strong>.<br />
+For <code>if-all</code> to pass, every condition that it contains must be <strong>true</strong>.<br />
+Every condition contained in <code>if-not</code> must resolve to <strong>false</strong>. <br />
+And as you can probably guess by now, a single <strong>true</strong> condition inside <code>if-any</code> is enough for it to pass.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spiders-are-spooky</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">on-message</span><span class="w"></span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-any</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">username-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*spider*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*spider*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">nickname-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*spider*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-not</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">user-joined-less-than</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2 hours</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">is-staff</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ban-user-and-delete</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-mod-log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Usage</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">S</span><span class="nv"> </span><span class="s">word</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">welcome</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">community.</span><span class="nv"> </span><span class="s">Begone,</span><span class="nv"> </span><span class="s">$user.&quot;</span><span class="w"></span>
+</code></pre></div>
+This is how a condition block is structured: it contains basic conditions.<br />
+In our case here <em>if</em> the author's of a message has the word spider in their username/nickname <em>OR</em> their message contains the word spider <em>AND</em> at the same time hasn't joined less than <strong>2</strong> hours ago and is also not a staff member <em>then</em> they will be banned and all the messages sent by them in the last day will be deleted.<br />
+Additionally, a mod-log entry for this last ban will be posted, condemning the author of this unspeakable crime for everyone to see.<br />
+Our Orwellian quest of never ever allowing the S word to be used in our community again is now completed.</p>
+<p>As you can see condition blocks are a nice to have when you need a slightly more complex logic but remember that they're not mandatory, you can choose to use them only when you truly need to.</p>
+<h3 id="a-quick-recap">A quick recap</h3>
+<p>Rules are triggered when the specified event takes place.<br />
+The user's rank (if applicable, not every event has a user context) will be matched against the one defined in the rule.<br />
+After that, the conditions will be evaluated and finally, if the conditions have passed, Warden will start processing the actions one by one.<br />
+If any of the actions fail execution will stop and the error will be reported in <code>[p]defender monitor</code>.<br />
+Rules can have an order of execution. See <a href="#advanced-features">advanced features</a> for more informations.</p>
+<h3 id="final-notes">Final notes</h3>
+<p>Rules give you complete freedom by design.<br />
+In that last example even <em>trusted roles</em> and <em>helper roles</em> aren't protected: if they pass the conditions they will be targeted by the actions.<br />
+Be careful when you design the logic of a rule with drastic actions such as bans. The parameter <strong>rank</strong> is there to help you protect categories of users: trusted users, helper users and staff will always be immune if you set the rank to at least level 2.</p>
+<h2 id="advanced-features">Advanced features</h2>
+<h3 id="execution-order">Execution order</h3>
+<p>The rules that you add do not have any guaranteed order of execution. You can change this, however, for example to make sure that a particular rule is always executed first (or after all your other ordered rules): this is done with the optional <code>priority</code> parameter.<br />
+Priority can be a number between 1 and 999. When something happens, Defender gathers all the rules that you have added for that particular event and reorders them based on the priority parameter. Rules that lack a priority parameter will always be executed last, in an unordered manner.<br />
+Defender will not stop you from defining multiple rules with the same priority: this is fine for rules that are for different events as they won't "conflict" with each other, however be mindful of that when you set up prioritized rules for a single event.<br />
+This is how you define a rule with priority:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always-first</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">on-message</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-to-monitor</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;I&#39;m</span><span class="nv"> </span><span class="s">1st!&quot;</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="heat-level">Heat level</h3>
+<p>Conditions give you a way to have your rules only execute under very specific conditions. However, what if, for example, we want our rule to execute after an user triggered some other rule a defined amount of times? That's where the heat level system comes in handy.<br />
+Imagine that each user has an invisible bar, just like an health bar in videogames, where their heat level is being tracked:  </p>
+<p><code>[____________________]</code>  </p>
+<p>This bar can contain a maximum of 100 heat points. Normally it is empty. Through rule actions you can assign points to this bar. Each point has a definite lifetime and you decide how much that is:  </p>
+<p><code>add-user-heatpoint: 10s</code>  (also accepts minutes and hours. Up to 24 hours)<br />
+<code>[X___________________]</code>  </p>
+<p>After 10 seconds have elapsed, the bar will go back to being empty. You can also assign multiple heatpoints at once with the same lifetime:  </p>
+<p><code>add-user-heatpoints: [5, 10m]</code><br />
+<code>[XXXXX_______________]</code>  </p>
+<p>And in case you want to empty the bar:<br />
+<code>empty-user-heat:</code>  </p>
+<p>But how do you check for heat points in rules? With conditions:<br />
+<code>user-heat-is: 5</code>
+or<br />
+<code>user-heat-more-than: 2</code></p>
+<p>You may want to first assign heatpoints and <em>then</em>, in a separate rule, check the heat level. Since rules are normally executed in an unordered manner, remember to use the <a href="#execution-order">priority parameter</a> to make sure that your heat-assigning rules are executed first.<br />
+Channels also have heat levels and they work the same way as users'. You can find all the related conditions and actions in the sections below plus some handy <a href="/defender-docs/warden/examples">examples</a> in their dedicated page.  </p>
+<h3 id="custom-heat-level">Custom heat level</h3>
+<p>Assuming you've read the previous section before this (please do so!), you may be wondering if you're limited to only two heat levels, per-channel and per-user. What if you want separate heat levels for each different rule, for example?<br />
+This is where <em>custom</em> heat levels can help. They work exactly like channel and user heat levels, except for the fact that you can assign to them the name you want. A few <a href="#context-variables">context variables</a> (specifically the IDs and rule name) are also available for extra flexibility.<br />
+Custom heat levels are extremely versatile. To demonstrate the variety of use cases they can used for we'll build a rule specific cooldown using them.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trigger-with-cooldown</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">on-message</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;hello&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">custom-heat-is</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$rule_name&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">add-custom-heatpoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$rule_name&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5 minutes</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-message</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">$channel_id</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;hello</span><span class="nv"> </span><span class="s">$user_mention&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+This rule can only be triggered every 5 minutes: as you can see in the actions a single custom heatpoint gets added, making the custom heat level "one" for five minutes. This will make the condition <code>custom-heat-is</code> "zero" false, not allowing the rule to be run until the heatpoint expires.  </p>
+<h3 id="periodic-rules">Periodic rules</h3>
+<p>Periodic rules are rules that can be set to run automatically every once in a while. Just like manual rules, they run against the entire server userbase: every user that satisfies its conditions will be affected by it. They can be particularly useful for certain needs, such as enforcing name conventions.<br />
+A simple example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dehoist-task</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">periodic</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nt">run-every</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15 minutes</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">username-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;!*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-not</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">nickname-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">set-user-nickname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no</span><span class="nv"> </span><span class="s">hoisting&quot;</span><span class="w"></span>
+</code></pre></div>
+This rule will run every 15 minutes (as defined by the mandatory <code>run-every</code> parameter) and will rename every user that has a name starting with an exclamation mark.<br />
+Keep in mind that a bot restart will reset the timer: the rule above, for example, will only run 15 minutes after the bot first starts.  </p>
+<h3 id="conditional-actions">Conditional actions</h3>
+<p>Sometimes you may want to carry on different actions according to certain conditions: this is doable by using conditions (or condition blocks) inside the <code>do</code> block. Each condition, or condition block, will equal to <code>true</code> or <code>false</code> and you can control the flow of the rule with <code>if-true</code> and <code>if-false</code>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Replies with pong when the user says ping, and viceversa</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ping-pong</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">on-message</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;ping&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;pong&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$message&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;contains-pattern&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-true</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-message</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">$channel_id</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;pong&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-false</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-message</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">$channel_id</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">filter</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">on-message</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*bad*&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;*words*&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">add-custom-heatpoint</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;filter-$user_id&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5 minutes</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">custom-heat-more-than</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;filter-$user_id&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># check if the user triggered this rule 5 or more times</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-true</span><span class="p">:</span><span class="w"> </span><span class="c1"># if they did, ban them</span><span class="w"></span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ban-user-and-delete</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">delete-user-message</span><span class="p">:</span><span class="w"> </span><span class="c1"># and proceed to delete the message in any case, ban or not</span><span class="w"></span>
+</code></pre></div>
+<h3 id="nesting">Nesting</h3>
+<p>Starting from Defender v1.12 you can make rules with nested condition blocks. This allows to define conditions with much greater complexity.<br />
+An example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dehoister</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">event</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">periodic</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">on-user-join</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">run-every</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5 minutes</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nt">if</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">is-staff</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># Ignore staff members</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-any</span><span class="p">:</span><span class="w"> </span><span class="c1"># Check if the user has either...</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">nickname-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;!*&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># (A) a hoisting nickname</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-all</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">username-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;!*&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># (B1) or a hoisting username ...</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-not</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">nickname-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># ... (B2) with no nickname already set</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if-not</span><span class="p">:</span><span class="w"> </span><span class="c1"># They also need NOT to be...</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">user-has-any-role-in</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;Patron&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># (1) ... a Patron member</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">     </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">nickname-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;dehoisted&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># (2) ... and not already dehoisted</span><span class="w"></span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="nt">do</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">set-user-nickname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dehoisted&quot;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="events">Events</h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>on-message</code></td>
+<td>A new message is sent</td>
+<td>message, user</td>
+</tr>
+<tr>
+<td><code>on-message-edit</code></td>
+<td>A message is edited</td>
+<td>message, user</td>
+</tr>
+<tr>
+<td><code>on-message-delete</code></td>
+<td>A message is deleted</td>
+<td>message, user</td>
+</tr>
+<tr>
+<td><code>on-user-join</code></td>
+<td>A new user joins the server</td>
+<td>user</td>
+</tr>
+<tr>
+<td><code>on-user-leave</code></td>
+<td>A user leaves the server</td>
+<td>user</td>
+</tr>
+<tr>
+<td><code>on-role-add</code></td>
+<td>A role is assigned to a user</td>
+<td>user</td>
+</tr>
+<tr>
+<td><code>on-role-remove</code></td>
+<td>A role is removed from a user</td>
+<td>user</td>
+</tr>
+<tr>
+<td><code>on-reaction-add</code></td>
+<td>A user added a reaction</td>
+<td>message, user</td>
+</tr>
+<tr>
+<td><code>on-reaction-remove</code></td>
+<td>A reaction is removed from a message. 'User' will always be the messages' original author.</td>
+<td>message, user</td>
+</tr>
+<tr>
+<td><code>on-emergency</code></td>
+<td>The server enters a state of emergency, either automatic or manual</td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>manual</code></td>
+<td>The rule is manually run by an admin with <code>[p]defender warden run</code></td>
+<td>user</td>
+</tr>
+<tr>
+<td><code>periodic</code></td>
+<td>The rule runs periodically, as defined by its own <code>run-every</code> parameter.<br>The interval can be set between 5 minutes and 24 hours.<br>See more info about <a href="#periodic-rules">periodic rules</a></td>
+<td>user</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The reaction events only work for cached messages. This means that messages that are too old or predate your bot's last boot will not trigger these events.
+Events that work for non cached messages may be added in a future update.</p>
+</div>
+<h2 id="deprecated-syntax">Deprecated syntax</h2>
+<p>The following syntax is deprecated: while there are currently no plans to remove old Warden syntax it is recommended that you switch to the recommended alternatives as soon as possible. It is not possible to create new rules with deprecated syntax.  </p>
+<ul>
+<li><code>send-dm</code>, <code>dm-user</code>, <code>send-to-channel</code>, <code>send-in-channel</code> replaced by <code>send-message</code>  </li>
+<li><code>notify-staff-and-ping</code>, <code>notify-staff-with-embed</code> replaced by <code>notify-staff</code>  </li>
+</ul>
+<h2 id="context-variables">Context variables</h2>
+<p>For more informations see <a href="#context">context</a></p>
+<table>
+<thead>
+<tr>
+<th>Context variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$rule_name</code></td>
+<td>The rule's name</td>
+</tr>
+<tr>
+<td><code>$notification_channel_id</code></td>
+<td>The notification channel ID for the server</td>
+</tr>
+<tr>
+<td><code>$guild</code></td>
+<td>The guild's name</td>
+</tr>
+<tr>
+<td><code>$guild_id</code></td>
+<td>The guild's ID</td>
+</tr>
+<tr>
+<td><code>$guild_icon_url</code></td>
+<td>The guild's icon url</td>
+</tr>
+<tr>
+<td><code>$guild_banner_url</code></td>
+<td>The guild's banner url</td>
+</tr>
+<tr>
+<td><code>$user</code></td>
+<td>The user's name + the discriminator</td>
+</tr>
+<tr>
+<td><code>$user_name</code></td>
+<td>The user's name</td>
+</tr>
+<tr>
+<td><code>$user_display</code></td>
+<td>The user's name or nickname, if one is set</td>
+</tr>
+<tr>
+<td><code>$user_id</code></td>
+<td>The user's ID</td>
+</tr>
+<tr>
+<td><code>$user_mention</code></td>
+<td>The user's mention</td>
+</tr>
+<tr>
+<td><code>$user_avatar_url</code></td>
+<td>The user avatar's url</td>
+</tr>
+<tr>
+<td><code>$user_nickname</code></td>
+<td>The user's nickname. "None" if not set</td>
+</tr>
+<tr>
+<td><code>$user_created_at</code></td>
+<td>The date and time in which the user created the account</td>
+</tr>
+<tr>
+<td><code>$user_joined_at</code></td>
+<td>The date and time in which the user joined the server</td>
+</tr>
+<tr>
+<td><code>$user_heat</code></td>
+<td>The user's <a href="#heat-level">heat level</a></td>
+</tr>
+<tr>
+<td><code>$message</code></td>
+<td>The raw message content. Mentions are automatically escaped</td>
+</tr>
+<tr>
+<td><code>$message_clean</code></td>
+<td>The message content. Mentions are transformed into the way the client shows it</td>
+</tr>
+<tr>
+<td><code>$message_id</code></td>
+<td>The message's ID</td>
+</tr>
+<tr>
+<td><code>$message_created_at</code></td>
+<td>The date and time in which the message was created</td>
+</tr>
+<tr>
+<td><code>$message_link</code></td>
+<td>The URL pointing to the message</td>
+</tr>
+<tr>
+<td><code>$message_reaction</code></td>
+<td>In a <code>on-reaction-*</code> event this contains the reaction that triggered it</td>
+</tr>
+<tr>
+<td><code>$attachment_filename</code></td>
+<td>The message attachment's filename, if any</td>
+</tr>
+<tr>
+<td><code>$attachment_url</code></td>
+<td>The message attachment's url, if any</td>
+</tr>
+<tr>
+<td><code>$channel</code></td>
+<td>The channel's name in the form of #channel_name</td>
+</tr>
+<tr>
+<td><code>$channel_name</code></td>
+<td>The channel's name</td>
+</tr>
+<tr>
+<td><code>$channel_id</code></td>
+<td>The channel's ID</td>
+</tr>
+<tr>
+<td><code>$channel_mention</code></td>
+<td>The channel's mention</td>
+</tr>
+<tr>
+<td><code>$channel_category</code></td>
+<td>The channel category's name, if any</td>
+</tr>
+<tr>
+<td><code>$channel_category_id</code></td>
+<td>The channel category's id, if any</td>
+</tr>
+<tr>
+<td><code>$channel_heat</code></td>
+<td>The channel's <a href="#heat-level">heat level</a></td>
+</tr>
+<tr>
+<td><code>$role_id</code></td>
+<td>The role's id in a <code>on-role-*</code> event</td>
+</tr>
+<tr>
+<td><code>$role_name</code></td>
+<td>The role's name in a <code>on-role-*</code> event</td>
+</tr>
+<tr>
+<td><code>$role_mention</code></td>
+<td>The role's mention in a <code>on-role-*</code> event</td>
+</tr>
+<tr>
+<td><code>$role_added</code></td>
+<td>Equals to 'true' in <code>on-role-add</code>, 'false' in <code>on-role-remove</code></td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020-present Twentysix (Twentysix26 @GitHub)
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/Twentysix26" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

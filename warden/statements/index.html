@@ -1,0 +1,1045 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Twentysix">
+      
+      
+        <link rel="canonical" href="https://twentysix26.github.io/defender-docs/warden/statements/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Warden - Actions / Conditions - Defender documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../test.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#actions-conditions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Defender documentation" class="md-header__button md-logo" aria-label="Defender documentation" data-md-component="logo">
+      
+  <img src="../../img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Defender documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Warden - Actions / Conditions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Defender documentation" class="md-nav__button md-logo" aria-label="Defender documentation" data-md-component="logo">
+      
+  <img src="../../img/logo.svg" alt="logo">
+
+    </a>
+    Defender documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Warden
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Warden" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Warden
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/defender-docs/warden/overview" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/defender-docs/warden/statements" class="md-nav__link">
+        Actions / conditions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/defender-docs/warden/examples" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conditions" class="md-nav__link">
+    Conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-conditions" class="md-nav__link">
+    Message conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-conditions" class="md-nav__link">
+    User conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-conditions" class="md-nav__link">
+    Channel conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-conditions" class="md-nav__link">
+    Server conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-conditions" class="md-nav__link">
+    Roles conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heat-level-conditions" class="md-nav__link">
+    Heat level conditions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-conditions" class="md-nav__link">
+    Custom conditions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actions" class="md-nav__link">
+    Actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-actions" class="md-nav__link">
+    User actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staff-notifications" class="md-nav__link">
+    Staff notifications
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-actions" class="md-nav__link">
+    Server actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heat-level-actions" class="md-nav__link">
+    Heat level actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#various-actions" class="md-nav__link">
+    Various actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-related-actions" class="md-nav__link">
+    Variables related actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="actions-conditions">Actions / Conditions</h1>
+<h2 id="conditions">Conditions</h2>
+<h3 id="message-conditions">Message conditions</h3>
+<ul>
+<li><code>message-matches-any</code><br />
+Is <code>true</code> if any of the patterns that you list are found in the message's content. This kind of searching might be inconvenient in certain use cases: if you prefer to look for whole words instead see the condition <code>message-contains-word</code><br />
+<strong>Accepts:</strong> A list of patterns. Patterns can make use of wildcards such as <code>*</code> and <code>?</code><br />
+<strong>Context:</strong> <code>message</code><br />
+<strong>Example:</strong><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;cat&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># This will only match exactly this word</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># I like cats -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># cat -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># cats -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*cat*&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># The wildcard &quot;*&quot; represents any multiple characters</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># I like cats -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># I like cat -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># I like c4t -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-matches-any</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;*c?t*&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># The wildcard &quot;?&quot; represents any single character</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># I like cats -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># I like cat -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># I like c4t -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># xxxxcatxxxx -&gt; Is true</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>message-matches-regex</code><br />
+Is <code>true</code> if the regex returns a match against the message's content<br />
+<strong>Accepts:</strong> A string representing a regular expression. Remember that <code>\</code> must be escaped: turn all <code>\</code> characters to <code>\\</code> when entering the rule.<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-has-attachment</code><br />
+Will check if the message contains an attachment<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-word</code><br />
+Is <code>true</code> if any of the words you list are found in the message. It does what it is most commonly know "whole word search". Patterns are supported<br />
+<strong>Example:</strong><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-contains-word</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;cat&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># I like cats -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># I like cat -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># I like c4t -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># xxxxcatxxxx -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">message-contains-word</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;c?t&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># The wildcard &quot;?&quot; represents any single character</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># I like cats -&gt; Is false</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># I like cat -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># I like c4t -&gt; Is true</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># xxxxcatxxxx -&gt; Is false</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>message-contains-url</code><br />
+Will check if the message contains a clickable URL.<br />
+Note: URLs lacking a protocol (http/https) will not be detected.<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-invite</code><br />
+Will check if the message contains a standard Discord invite. Invites that belong to the server are ignored.<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-media</code><br />
+Will check if the message contains any media link  (picture or video)<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-more-than-mentions</code><br />
+Will check if the message contains more than X user mentions.<br />
+<strong>Accepts:</strong> A number representing the number of mentions<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-more-than-unique-mentions</code><br />
+Will check if the message contains more than X unique user mentions. As opposed to the non-unique variant the mentioned users are being counted, <em>not</em> just the mentions themselves.<br />
+<strong>Accepts:</strong> A number representing the number of unique mentions.<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-more-than-role-pings</code><br />
+Will check if the message contains more than X unique role mentions. Only mentions that result in a ping will be counted.<br />
+<strong>Accepts:</strong> A number representing the number of role mentions<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-contains-more-than-emojis</code><br />
+Will check if the message contains more than X emojis. <strong>Important:</strong> emojis with <a href="https://en.wikipedia.org/wiki/Emoticons_(Unicode_block)#Emoji_modifiers">modifiers</a>, such as a thumbs up emoji with custom skin color, will be considered 2 separate emojis.<br />
+<strong>Accepts:</strong> A number representing the number of emojis.<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>message-has-more-than-characters</code><br />
+Will check if the message contains more than X characters. Emojis and custom emojis will be considered a single character. Mentions, both users and channels, are counted too.<br />
+<strong>Accepts:</strong> A number representing the number of characters.<br />
+<strong>Context:</strong> <code>message</code>  </li>
+</ul>
+<h3 id="user-conditions">User conditions</h3>
+<ul>
+<li><code>user-id-matches-any</code><br />
+Is <code>true</code> if any of the IDs that you list match the user's ID<br />
+<strong>Accepts:</strong> A list of IDs (numbers)<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>user-id-matches-any: [123456789, 2626262626]</code>  </li>
+<li><code>username-matches-any</code><br />
+Is <code>true</code> if any of the patterns that you list are found in the user's username<br />
+<strong>Accepts:</strong> A list of patterns. Patterns can make use of wildcards such as <code>*</code> and <code>?</code><br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>username-matches-regex</code><br />
+Is <code>true</code> if the regex returns a match against the user's username<br />
+<strong>Accepts:</strong> A string representing a regular expression. Remember that <code>\</code> must be escaped: turn all <code>\</code> characters to <code>\\</code> when entering the rule.<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>nickname-matches-any</code><br />
+Is <code>true</code> if any of the patterns that you list are found in the user's nickname<br />
+<strong>Accepts:</strong> A list of patterns. Patterns can make use of wildcards such as <code>*</code> and <code>?</code><br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>nickname-matches-regex</code><br />
+Is <code>true</code> if the regex returns a match against the user's nickname<br />
+<strong>Accepts:</strong> A string representing a regular expression. Remember that <code>\</code> must be escaped: turn all <code>\</code> characters to <code>\\</code> when entering the rule.<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>user-activity-matches-any</code><br />
+Is <code>true</code> if any of the patterns that you list are found in any of the user's activities<br />
+<strong>Accepts:</strong> A list of patterns. Patterns can make use of wildcards such as <code>*</code> and <code>?</code><br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>user-status-matches-any</code><br />
+Is <code>true</code> if any of the statuses that you list are the user's current status<br />
+<strong>Accepts:</strong> A list of statuses. Can be <code>online</code>, <code>idle</code>, <code>dnd</code> or <code>offline</code><br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>user-created-less-than</code><br />
+Is <code>true</code> if the user's account has been created less than <defined time> ago.<br />
+<strong>Accepts:</strong> A timedelta. Or a number, representing the amount of hours to be checked<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>user-created-less-than: 2 hours</code>  </li>
+<li><code>user-joined-less-than</code><br />
+Is <code>true</code> if the user has joined the server less than <defined time> ago.<br />
+<strong>Accepts:</strong> A timedelta. Or a number, representing the amount of hours to be checked<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>user-joined-less-than: 2 hours</code>  </li>
+<li><code>user-has-default-avatar</code><br />
+Will check if the user has a default Discord avatar<br />
+<strong>Accepts:</strong> A bool (true or false)<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>user-has-default-avatar: true</code> will be <code>true</code> if the profile picture is a default one  </li>
+<li><code>user-has-sent-less-than-messages</code><br />
+Will check if the user has sent less than X messages in the server. <strong>Important:</strong> Defender, by default, counts how many messages a user sends in a server. This does <em>not</em> check the real total number of messages a user has sent in a server since its creation.<br />
+<strong>Accepts:</strong> A number representing the number of messages<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>user-is-rank</code><br />
+Will check if the user is the specified rank. This condition allows for <em>rank-specific</em> Warden rules and grants more granular control compared to the standard <code>rank</code> parameter, which merely indicates the maximum rank a rule will have effect on.<br />
+<strong>Accepts:</strong> A number representing the rank the user must belong to<br />
+<strong>Context:</strong> <code>user</code>  </li>
+</ul>
+<h3 id="channel-conditions">Channel conditions</h3>
+<ul>
+<li><code>channel-matches-any</code><br />
+Will check if the message was sent in any of the specified channels.<br />
+<strong>Accepts:</strong> A list of channel names or IDs<br />
+<strong>Context:</strong> <code>message</code><br />
+<strong>Example:</strong> <code>channel-matches-any: [general, testing, 483223782]</code> will be <code>true</code> if the message was sent in any of these channels  </li>
+<li><code>category-matches-any</code><br />
+Will check if the channel in which the message was sent belongs to any of the specified categories.<br />
+<strong>Accepts:</strong> A list of category names or IDs<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>channel-is-public</code><br />
+Will check if the message was sent in a publicly viewable channel.<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+</ul>
+<h3 id="server-conditions">Server conditions</h3>
+<ul>
+<li><code>in-emergency-mode</code><br />
+Will check if the server is in emergency mode, either manual or automatic<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> Any  </li>
+</ul>
+<h3 id="roles-conditions">Roles conditions</h3>
+<ul>
+<li><code>user-has-any-role-in</code><br />
+Is <code>true</code> if the user belongs to any of these roles in the list<br />
+<strong>Accepts:</strong> A list of role names or IDs<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>user-has-any-role-in: [12345678, spider-fighter]</code> will be <code>true</code> if the user belongs to any of these roles  </li>
+<li><code>is-staff</code><br />
+Will check if the user is a staff member<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>is-helper</code><br />
+Will check if the user is a Defender helper<br />
+<strong>Accepts:</strong> A bool (true or false)  <br />
+<strong>Context:</strong> <code>user</code>  </li>
+</ul>
+<h3 id="heat-level-conditions">Heat level conditions</h3>
+<ul>
+<li><code>user-heat-is</code><br />
+Is <code>true</code> if the user has the specified <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A number between 0 and 100  <br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>user-heat-more-than</code><br />
+Is <code>true</code> if the user exceeds the specified <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A number between 0 and 100  <br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>channel-heat-is</code><br />
+Is <code>true</code> if the channel has the specified <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A number between 0 and 100  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>channel-heat-more-than</code><br />
+Is <code>true</code> if the channel exceeds the specified <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A number between 0 and 100  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>custom-heat-is</code><br />
+Is <code>true</code> if the <a href="/defender-docs/warden/overview#custom-heat-level">custom heat</a> has the specified level<br />
+<strong>Accepts:</strong> A list with two elements: the custom heat level name and a number between 0 and 100. Rule name and IDs <a href="/defender-docs/warden/overview#context-variables">context variables</a> are available for the name.<br />
+<strong>Context:</strong> <code>Any</code>  </li>
+<li><code>custom-heat-more-than</code><br />
+Is <code>true</code> if the <a href="/defender-docs/warden/overview#custom-heat-level">custom heat</a> exceeds the specified level<br />
+<strong>Accepts:</strong> A list with two elements: the custom heat level name and a number between 0 and 100. Rule name and IDs <a href="/defender-docs/warden/overview#context-variables">context variables</a> are available for the name.<br />
+<strong>Context:</strong> <code>Any</code></li>
+</ul>
+<h3 id="custom-conditions">Custom conditions</h3>
+<ul>
+<li><code>compare</code><br />
+Compares two values. Supports a variety of operators, textual and numeric. The comparison is case sensitive. This is most useful when used in conjunction with context variables. Using numeric operators with non-numeric values will raise an error.<br />
+<em>Supported operators:</em> <code>==</code>, <code>!=</code>, <code>contains</code>, <code>contains-pattern</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>&lt;</code>, <code>&gt;</code><br />
+<code>contains-pattern</code> supports a pattern, just like the condition <code>message-matches-any</code> and it's case insensitive.<br />
+<strong>Example:</strong><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">abc</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">abc</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;&lt;&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># False</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">value1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">bots&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">value2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;bots&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">$value2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;contains&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">$value1</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True. Notice the $ symbol which denotes the use of context variables.</span><span class="w"></span>
+</code></pre></div>
+<strong>Context:</strong> <code>Any</code>  </li>
+</ul>
+<h2 id="actions">Actions</h2>
+<ul>
+<li><code>send-message</code><br />
+Will send a message to the defined destination. Message editing is also supported. The message may include an embed. Please refer to the <a href="/defender-docs/warden/examples#sending-a-message">examples</a> to understand its use.<br />
+<strong>Accepts:</strong> A map with the destination, the message's content and the embed. Or a list with 2 elements, destination and message content<br />
+<strong>Context:</strong> <code>Any</code>  </li>
+</ul>
+<h3 id="user-actions">User actions</h3>
+<ul>
+<li><code>set-user-nickname</code><br />
+Will change the nickname of a user<br />
+<strong>Accepts:</strong> A string representing the new nickname to set. Supports context variables.<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>delete-user-message</code><br />
+Will delete the user's message<br />
+<strong>Accepts:</strong> Nothing  <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>add-roles-to-user</code><br />
+Will assign the listed roles to the user<br />
+<strong>Accepts:</strong> A list of roles (names / IDs)<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>remove-roles-from-user</code><br />
+Will remove the listed roles from the user<br />
+<strong>Accepts:</strong> A list of roles (names / IDs)<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>ban-user-and-delete</code><br />
+Will ban the user from the server and delete X days worth of messages<br />
+<strong>Accepts:</strong> A number representing the days worth of messages to delete<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>kick-user</code><br />
+Will kick the user from the server<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>softban-user</code><br />
+Will kick the user from the server and delete 1 days worth of messages<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>punish-user</code><br />
+Will assign to the user the "punish role" that has been set in Defender<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>punish-user-with-message</code><br />
+Will assign to the user the "punish role" and deliver the "punish message" that have been set in Defender (see <code>[p]dset general</code>)<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>get-user-info</code><br />
+Gets an attribute from an arbitrary user and assigns it to a variable. Many of the <a href="https://discordpy.readthedocs.io/en/latest/api.html#discord.Member">standard discord.py Member attributes</a> are supported.<br />
+Additionally, the attributes<br />
+<code>is_staff</code> - <code>is_helper</code> with return value <code>true</code> or <code>false</code><br />
+<code>rank</code> which returns the rank's number<br />
+<code>message_count</code> which returns the number of messages recorded by Defender<br />
+are available.<br />
+If the user cannot be found an error will be raised. <br />
+<strong>Accepts:</strong> The ID of a user (context variables are supported) and a map with the attribute to fetch as the value and the target variable as the key.<br />
+<strong>Context:</strong> Any<br />
+<strong>Example:</strong><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">get-user-info</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">$user_id</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">joined</span><span class="p">:</span><span class="w"> </span><span class="nv">joined_at</span><span class="p p-Indicator">,</span><span class="nt"> created</span><span class="p">:</span><span class="w"> </span><span class="nv">created_at</span><span class="p p-Indicator">}]</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-message</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">$channel_id</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Your</span><span class="nv"> </span><span class="s">join</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">$joined.</span><span class="nv"> </span><span class="s">Your</span><span class="nv"> </span><span class="s">account</span><span class="nv"> </span><span class="s">creation</span><span class="nv"> </span><span class="s">date</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">$created.&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Long form</span><span class="w"></span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">get-user-info</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123456789</span><span class="w"></span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">mapping</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">       </span><span class="nt">joined</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joined_at</span><span class="w"></span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">       </span><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">created_at</span><span class="w"></span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">       </span><span class="nt">staff</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_staff</span><span class="w"></span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">       </span><span class="nt">helper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">is_helper</span><span class="w"></span>
+</code></pre></div></li>
+</ul>
+<h3 id="staff-notifications">Staff notifications</h3>
+<ul>
+<li><code>notify-staff</code><br />
+Will send a message to staff's notification channel. The message may include an embed. Please refer to the <a href="/defender-docs/warden/examples#notifying-the-staff">examples</a> to understand its use.  <br />
+<strong>Accepts:</strong> A string representing the message to send. Or a map that describes the embed and all the behaviors of the notification.<br />
+<strong>Context:</strong> Any  </li>
+<li><code>send-mod-log</code><br />
+Will create a new mod-log case of the last expel action issued by the rule<br />
+<strong>Accepts:</strong> A string representing the reason of the expel action. Supports context variables.<br />
+<strong>Context:</strong> Any  </li>
+<li><code>send-to-monitor</code><br />
+Will send a message to Defender's monitor, <code>[p]defender monitor</code><br />
+<strong>Accepts:</strong> A string representing the message to send. Supports context variables.<br />
+<strong>Context:</strong> Any  </li>
+</ul>
+<h3 id="server-actions">Server actions</h3>
+<ul>
+<li><code>set-channel-slowmode</code><br />
+Will set (or deactivate) slowmode of the channel in the context's message<br />
+<strong>Accepts:</strong> A string representing the slowmode time. Some examples: '5 seconds', '2 minutes', '4 hours'. '0 seconds' will deactivate slowmode. <br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>enable-emergency-mode</code><br />
+Will toggle emergency mode<br />
+<strong>Accepts:</strong> A bool (true or false), representing whether emergency mode should be enabled or disabled<br />
+<strong>Context:</strong> Any  </li>
+</ul>
+<h3 id="heat-level-actions">Heat level actions</h3>
+<ul>
+<li><code>add-user-heatpoint</code><br />
+Adds a single heat point with the specified lifetime to the user's <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A string representing the heat point's lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>add-user-heatpoint: 5 seconds</code> <code>add-user-heatpoint: 1m</code>  </li>
+<li><code>add-user-heatpoints</code><br />
+Adds multiple heat points with the specified lifetime to the user's <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A list containing two elements: the amount of heatpoints to assign (1-100) and a string representing the heat points' lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'<br />
+<strong>Context:</strong> <code>user</code><br />
+<strong>Example:</strong> <code>add-user-heatpoints: [10, 5 seconds]</code> <code>add-user-heatpoints: [2, 1m]</code>  </li>
+<li><code>add-channel-heatpoint</code><br />
+Adds a single heat point with the specified lifetime to the channel's <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A string representing the heat point's lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'<br />
+<strong>Context:</strong> <code>message</code><br />
+<strong>Example:</strong> <code>add-channel-heatpoint: 5 seconds</code> <code>add-channel-heatpoint: 1m</code>  </li>
+<li><code>add-channel-heatpoints</code><br />
+Adds multiple heat points with the specified lifetime to the channel's <a href="#heat-level">heat level</a><br />
+<strong>Accepts:</strong> A list containing two elements: the amount of heatpoints to assign (1-100) and a string representing the heat points' lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'<br />
+<strong>Context:</strong> <code>message</code><br />
+<strong>Example:</strong> <code>add-channel-heatpoints: [10, 5 seconds]</code> <code>add-channel-heatpoints: [2, 1m]</code>  </li>
+<li><code>add-custom-heatpoint</code><br />
+Adds a single heat point with the specified lifetime to the <a href="/defender-docs/warden/overview#custom-heat-level">custom heat level</a><br />
+<strong>Accepts:</strong> A list containing two elements: a string representing the custom heat level name and a string representing the heat point's lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'. Rule name and IDs <a href="/defender-docs/warden/overview#context-variables">context variables</a> are available for the name.<br />
+<strong>Context:</strong> <code>Any</code><br />
+<strong>Example:</strong> <code>add-custom-heatpoint: ["filter-$user_id", "5 seconds"]</code>  </li>
+<li><code>add-custom-heatpoints</code><br />
+Adds multiple heat points with the specified lifetime to the <a href="/defender-docs/warden/overview#custom-heat-level">custom heat level</a><br />
+<strong>Accepts:</strong> A list containing three elements: a string representing the custom heat level name, a number representing the amount of heat points to add and a string representing the heat points lifetime. Some examples: '5 seconds', '2 minutes', '4 hours'. Rule name and IDs <a href="/defender-docs/warden/overview#context-variables">context variables</a> are available for the name.<br />
+<strong>Context:</strong> <code>Any</code><br />
+<strong>Example:</strong> <code>add-user-heatpoints: ["$rule_name", 10, 5 seconds]</code>  </li>
+<li><code>empty-user-heat</code><br />
+Sets the user's <a href="#heat-level">heat level</a> to 0<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> <code>user</code>  </li>
+<li><code>empty-channel-heat</code><br />
+Sets the channel's <a href="#heat-level">heat level</a> to 0<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> <code>message</code>  </li>
+<li><code>empty-custom-heat</code><br />
+Sets the specified <a href="/defender-docs/warden/overview#custom-heat-level">custom heat level</a> to 0<br />
+<strong>Accepts:</strong> A string representing the <a href="/defender-docs/warden/overview#custom-heat-level">custom heat level</a> name. Rule name and IDs <a href="/defender-docs/warden/overview#context-variables">context variables</a> are available for the name.<br />
+<strong>Context:</strong> <code>Any</code>  </li>
+</ul>
+<h3 id="various-actions">Various actions</h3>
+<ul>
+<li><code>no-op</code><br />
+Does nothing. Useful only for testing a rule's conditions with <code>[p]defender warden run</code><br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> Any  </li>
+<li><code>exit</code><br />
+Interrupts the rule's processing, not carrying on any further action. This is useful when used in conjunction with conditional actions.<br />
+<strong>Accepts:</strong> Nothing<br />
+<strong>Context:</strong> Any  </li>
+<li><code>issue-command</code><br />
+Will issue a bot command as if it was issued by the specified user. The specified user must be the rule's author. If no destination is specified issuing a command in a <code>message</code> context will make it issue in the same channel as the message's; in any other case the command will be issued in Defender's notification channel.<br />
+<strong>Accepts:</strong> A list with two elements: a number representing the ID of the rule's author and a string representing the command to issue. The command must not contain the prefix. <a href="/defender-docs/warden/overview#context-variables">Context variables</a> are supported. The long form of this action also supports a destination.<br />
+<strong>Context:</strong> <code>Any</code><br />
+<strong>Example:</strong><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">issue-command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2626262626</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ban</span><span class="nv"> </span><span class="s">$user_id</span><span class="nv"> </span><span class="s">User</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">been</span><span class="nv"> </span><span class="s">banned</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">Warden&#39;s</span><span class="nv"> </span><span class="s">rule</span><span class="nv"> </span><span class="s">$rule_name&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">issue-command</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="nt">issue_as</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2626262626</span><span class="w"> </span><span class="c1"># User ID</span><span class="w"></span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ping</span><span class="w"> </span><span class="c1"># Command</span><span class="w"></span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">   </span><span class="nt">destination</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123456</span><span class="w"> </span><span class="c1"># Channel ID</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>delete-last-message-sent-after</code><br />
+Will delete the last message sent through a Warden action after the specified time. The time must be between 1 and 15 minutes.<br />
+<strong>Accepts:</strong> A string representing the time to wait before deleting the message<br />
+<strong>Context:</strong> <code>Any</code><br />
+<strong>Example:</strong> <code>send-message: [$channel_id, I'm going to disappear in 5 seconds!]</code><br />
+<code>delete-last-message-sent-after: 5 seconds</code>  </li>
+</ul>
+<h3 id="variables-related-actions">Variables related actions</h3>
+<ul>
+<li><code>var-assign</code><br />
+Assigns a value to a variable.<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">123</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_var</span><span class="w"></span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123</span><span class="w"></span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">evaluate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (optional, if true any context variable contained in value will be evaluated)</span><span class="w"></span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># The variable my_var will be equal to 123</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-assign-random</code><br />
+Assigns a random value to a variable, picking one from a list of choices. Supports weighted choices<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># A simple, non-weighted choice</span><span class="w"></span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign-random</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">apple</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">banana</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pear</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign-random</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_var</span><span class="w"></span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">choices</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">apple</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">banana</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pear</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">evaluate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (optional, if true any context variable contained in value will be evaluated)</span><span class="w"></span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># A weighted choice</span><span class="w"></span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign-random</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_var</span><span class="w"></span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">choices</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">       </span><span class="nt">apple</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">       </span><span class="nt">banana</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">       </span><span class="nt">pear</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nt">evaluate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (optional, if true any context variable contained in value will be evaluated)</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-assign-heat</code><br />
+Assigns a heat level value to a variable. Supports all kinds of heat levels.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">add-user-heatpoints</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10 minutes</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">add-channel-heatpoints</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10 minutes</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">add-custom-heatpoints</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">example</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">10 minutes</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign-heat</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">u_heat</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">user_heat</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Assigns user&#39;s heat to the variable u_heat</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign-heat</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ch_heat</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">channel_heat</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Assigns channel&#39;s heat to the variable ch_heat</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign-heat</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">cu_heat</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">example</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Assigns custom heat &quot;example&quot; to the variable cu_heat</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-to-monitor</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Custom</span><span class="nv"> </span><span class="s">heat</span><span class="nv"> </span><span class="s">level</span><span class="nv"> </span><span class="s">&#39;example&#39;:</span><span class="nv"> </span><span class="s">$cu_heat&quot;</span><span class="w"> </span><span class="c1"># Displays the custom heat level &quot;example&quot;</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">result</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;$u_heat&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;$ch_heat&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Calculates the sum of user heat and channel heat</span><span class="w"></span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">send-to-monitor</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">sum</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">user</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">channel</span><span class="nv"> </span><span class="s">heat</span><span class="nv"> </span><span class="s">levels:</span><span class="nv"> </span><span class="s">$result&quot;</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-math</code><br />
+Allows to perform mathematical operations with up to two operands. Supports context variables.<br />
+Supported operators: +, -, *, /, pow, abs, floor, ceil, trunc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">re</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># var re equals to 2</span><span class="w"></span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">re</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># var re equals to 6</span><span class="w"></span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">re</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;abs&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># var re equals to 5</span><span class="w"></span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">re</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5.1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ceil&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># var re equals to 6</span><span class="w"></span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">re</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.26</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;trunc&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># var re equals to 2</span><span class="w"></span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">op1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">52</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">op2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-math</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">re</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;$op1&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;$op2&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># var re equals to 26.0</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-split</code><br />
+Splits a variable into parts, using separator as the delimiter, and assigns the parts to different variables. If there are more parts than provided variables, the remaining parts will be discarded. If there are fewer parts than provided variables, an empty string will be assigned to the remaining variables. Maximum splits can be specified, by default there is no limit. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apple</span><span class="nv"> </span><span class="s">pear</span><span class="nv"> </span><span class="s">banana</span><span class="nv"> </span><span class="s">tomato&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># fruit1 will contain &quot;apple&quot;, fruit2 &quot;pear&quot;, etc. Splits are done left to right.</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-split</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit4</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># As before fruit1 will contain &quot;apple&quot;, fruit2 &quot;pear&quot; but the remaining parts will be lost</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-split</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit2</span><span class="p p-Indicator">]]</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># A max_split of 1 is specified, fruit1 will still be &quot;apple&quot;, but fruit2 will be &quot;pear banana tomato&quot;</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-split</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit2</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$fruit2&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;pear</span><span class="nv"> </span><span class="s">banana</span><span class="nv"> </span><span class="s">tomato&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="c1"># Same as before, but fruit3 will be an empty string: only one split has been done, and there&#39;s nothing left to assign to fruit3.</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-split</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit3</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$fruit1&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$fruit3&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c1"># Long form:</span><span class="w"></span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-split</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fruit</span><span class="w"></span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="nt">separator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="nt">split_into</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">fruit1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fruit3</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="nt">max_split</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># (optional)</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-slice</code><br />
+Slices a variable according to the indices (the position of the characters) that are being passed. If a variable name is passed with slice_into the original variable will be left untouched. The optional parameter step, found in Python's string slicing, can also be passed. Remember than indices start from 0, not 1.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;abcdefgh&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-slice</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sliced</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$sliced&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ab&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-slice</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$my_var&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;abcd&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;abcdefgh&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># Long form</span><span class="w"></span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-slice</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_var</span><span class="w"></span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">    </span><span class="nt">end_index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99</span><span class="w"></span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="nt">slice_into</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sliced</span><span class="w"></span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="nt">step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$sliced&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;aceg&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-replace</code><br />
+Modifies a variable with all the occurrences of strings replaced by substring. Strings can be a single value or a list of values.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">apples</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">lot&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">a</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">4</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$sliced&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">4pples</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">lot&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">apples</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">lot&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-replace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">a</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">p</span><span class="p p-Indicator">],</span><span class="w"> </span><span class="nv">x</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$sliced&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">xxxles</span><span class="nv"> </span><span class="s">x</span><span class="nv"> </span><span class="s">lot&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># Long form</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-replace</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_var</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="nt">strings</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"> </span><span class="c1"># Can also be a list, as shown above</span><span class="w"></span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span><span class="nt">substring</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+</code></pre></div></li>
+<li><code>var-transform</code><br />
+Modifies a variable depending on the "operation" that it's being requested. Supported operations are capitalize, lowercase, reverse, uppercase, title.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">apples</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">LOT&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-transform</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">lowercase</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$my_var&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;i</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">apples</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">lot&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-transform</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">uppercase</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$my_var&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">LIKE</span><span class="nv"> </span><span class="s">APPLES</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">LOT&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">apples</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">lot&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-transform</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">title</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Capitalizes the first letter of each word</span><span class="w"></span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$my_var&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">Like</span><span class="nv"> </span><span class="s">Apples</span><span class="nv"> </span><span class="s">A</span><span class="nv"> </span><span class="s">Lot&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True!</span><span class="w"></span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-assign</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;two</span><span class="nv"> </span><span class="s">words&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-transform</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">my_var</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">capitalize</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Only capitalizes the first letter</span><span class="w"></span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">compare</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;$my_var&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;==&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;Two</span><span class="nv"> </span><span class="s">words&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># True! </span><span class="w"></span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="c1"># Long form</span><span class="w"></span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">var-transform</span><span class="p">:</span><span class="w"></span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="nt">var_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_var</span><span class="w"></span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="nt">operation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uppercase</span><span class="w"></span>
+</code></pre></div></li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2020-present Twentysix (Twentysix26 @GitHub)
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/Twentysix26" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
