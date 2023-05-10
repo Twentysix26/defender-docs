@@ -306,6 +306,19 @@ Will create a new mod-log case of the last expel action issued by the rule
 Will send a message to Defender's monitor, `[p]defender monitor`  
 **Accepts:** A string representing the message to send. Supports context variables.  
 **Context:** Any  
+* `warnsystem-warn`  
+Will [warn](https://laggron.red/warnsystem-api.html#warnsystem.api.API.warn) one or more users using the [WarnSystem](https://github.com/laggron42/Laggrons-Dumb-Cogs) cog.  
+This is an integration: the 3rd party cog WarnSystem must be installed and loaded.  
+**Accepts:** See example  
+**Context:** Any  
+**Example:**  
+```yaml
+# Mutes a user for 4 hours
+- warnsystem-warn: [2626262626, 2, "Spammer", "4 hours"]
+
+# Long form is also supported and it handles most attributes found in the API.
+# Documentation TBA. PRs welcome :-)
+```
 
 ### Server actions
 

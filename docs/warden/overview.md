@@ -251,13 +251,14 @@ do:
     Events that work for non cached messages may be added in a future update.
 
 ## Deprecated syntax
-The following syntax is deprecated: while there are currently no plans to remove old Warden syntax it is recommended that you switch to the recommended alternatives as soon as possible. It is not possible to create new rules with deprecated syntax.  
+The following syntax is deprecated: it is not possible to create new rules with deprecated syntax.  
 
 - `send-dm`, `dm-user`, `send-to-channel`, `send-in-channel` replaced by `send-message`  
 - `notify-staff-and-ping`, `notify-staff-with-embed` replaced by `notify-staff`  
 
 ## Context variables
-For more informations see [context](#context)
+For more informations see [context](#context)  
+Note: Since Defender 2.0 `$channel_*` context variables can also refer to a thread instead. If they do, `$parent_*` context variables will contain the data about the thread's channel (its parent).
 
   | Context variable      | Description
   | ----------- | ------------------------------------ |
@@ -285,13 +286,17 @@ For more informations see [context](#context)
   | `$message_reaction` | In a `on-reaction-*` event this contains the reaction that triggered it |
   | `$attachment_filename` | The message attachment's filename, if any |
   | `$attachment_url` | The message attachment's url, if any |
-  | `$channel` | The channel's name in the form of #channel_name |
-  | `$channel_name` | The channel's name |
-  | `$channel_id` | The channel's ID |
-  | `$channel_mention` | The channel's mention |
-  | `$channel_category` | The channel category's name, if any |
-  | `$channel_category_id` | The channel category's id, if any |
-  | `$channel_heat` | The channel's [heat level](#heat-level) |
+  | `$channel` | The channel's / thread's name in the form of #channel_name. |
+  | `$channel_name` | The channel's / thread's name |
+  | `$channel_id` | The channel's / thread's ID |
+  | `$channel_mention` | The channel's / thread's mention |
+  | `$channel_category` | The channel / thread's category's name, if any |
+  | `$channel_category_id` | The channel / thread's category's id, if any |
+  | `$parent` | The thread's channel name in the form of #channel_name, if any |
+  | `$parent_name` | The thread's channel name, if any |
+  | `$parent_id` | The thread's channel ID, if any |
+  | `$parent_mention` | The thread's channel mention, if any |
+  | `$parent_heat` | The thread's channel [heat level](#heat-level), if any |
   | `$role_id` | The role's id in a `on-role-*` event |
   | `$role_name` | The role's name in a `on-role-*` event |
   | `$role_mention` | The role's mention in a `on-role-*` event |

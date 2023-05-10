@@ -81,44 +81,17 @@ graph BT
 
     Want to know which Rank a particular user is? Use `[p]def identify <user>`
 
-## Emergency mode
-
-`Emergency mode` is a feature meant to help when nobody in your staff team is online; it can be triggered by the `Alert` manual module described above.  
-During configuration you can choose to assign a number of manual modules to emergency mode.  
-After your designated helper roles issue a `[p]alert` / `[p]staff` Defender will wait for a time for your staff team to take any action in the server.  
-In case your staff team doesn't respond for X minutes, emergency mode will be triggered. Users with the helper roles will be able to use the emergency modules, and depending on which ones you chose, they'll be able to deal with the threat by themselves.  
-Defender will periodically check for activity by your staff team and upon detecting it, it will  disable emergency mode.
-
-## Quick actions
-It is possible to act on Defender's standard notifications by reacting on them. It is also possible to make Warden rules that support this.  
-
-<figure markdown>
-  ![def status command](img/qa.png)
-  <figcaption>A ban reaction on a notification</figcaption>
-</figure>
-
-  | Emoji      | Action                          |
-  | ----------- | ------------------------------------ |
-  | 🔨 `:hammer:` | Ban |
-  | 🔂 `:repeat_one:` | Ban with 24 hours message deletion |
-  | 💨 `:dash:` | Softban |
-  | 👢 `:boot:` | Kick |
-  | 👊 `:punch:` | Punish |
-
-!!! tip
-
-    On your Discord client you can favorite the emoji of your most used actions with alt+click
-
 ## Warden checks
 
-:sparkles: *New in v1.13* :sparkles:
+:sparkles: *New in v2.0* :sparkles:
 
 !!! note
 
     Warden checks require a basic understanding of the Warden automodule. If you feel lost, it might be better to [read its docs](warden/overview) first.
 
-Each Defender's module has a number of settings. Most, for example, let you set the highest rank to target. However, what if you want a certain module to only work in channels A and B or only target users with role Y and Z?  
-This is where **Warden checks** can help. Warden checks leverage the flexibility of the [Warden](warden/overview) engine to give you greater control over each module. They are custom sets of conditions (that *you* can define) that get evaluated after all the other checks have been done.  
+Warden checks are a powerful feature that allows users to set custom [Warden](warden/overview) conditions to further pinpoint the targets of standard modules. With Warden checks, users can specify their own sets of conditions to ensure that a module only targets certain users, or only certain users under a specific set of conditions.  
+For example, a user may want to restrict the Invite Filter automodule to only work in channels A and B or to target users with roles Y and Z. By using Warden checks, the user can define the necessary conditions to achieve this.
+Warden checks are evaluated after all other standard checks have been performed, ensuring that they have the final say in determining whether a user should be targeted. They can consist of any combination of conditions and condition blocks, giving users greater flexibility and control over how each module operates.  
 To better illustrate this, let's see in simple terms how the Invite Filter automodule would work:
 
 ``` mermaid
