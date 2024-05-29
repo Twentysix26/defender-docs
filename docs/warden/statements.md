@@ -107,6 +107,16 @@ Is `true` if any of the patterns that you list are found in the user's nickname
 Is `true` if the regex returns a match against the user's nickname  
 **Accepts:** A string representing a regular expression. Remember that `\` must be escaped: turn all `\` characters to `\\` when entering the rule.  
 **Context:** `user`  
+* `display-name-matches-any`  
+Is `true` if any of the patterns that you list are found in the user's display name.  
+The display name can be the user's server specific nickname, if they have one set, otherwise it's their global name or their username.  
+**Accepts:** A list of patterns. Patterns can make use of wildcards such as `*` and `?`  
+**Context:** `user`  
+* `display-name-matches-regex`  
+Is `true` if the regex returns a match against the user's display name.  
+The display name can be the user's server specific nickname, if they have one set, otherwise it's their global name or their username.  
+**Accepts:** A string representing a regular expression. Remember that `\` must be escaped: turn all `\` characters to `\\` when entering the rule.  
+**Context:** `user`  
 * `user-activity-matches-any`  
 Is `true` if any of the patterns that you list are found in any of the user's activities  
 **Accepts:** A list of patterns. Patterns can make use of wildcards such as `*` and `?`  
@@ -142,8 +152,8 @@ Will check if the user is the specified rank. This condition allows for *rank-sp
 ### Channel conditions
 
 * `channel-matches-any`  
-Will check if the message was sent in any of the specified channels.  
-**Accepts:** A list of channel names or IDs  
+Will check if the message was sent in any of the specified channels / threads  
+**Accepts:** A list of channel names or IDs / thread IDs  
 **Context:** `message`  
 **Example:** `channel-matches-any: [general, testing, 483223782]` will be `true` if the message was sent in any of these channels  
 * `category-matches-any`  
@@ -267,6 +277,10 @@ Will assign to the user the "punish role" that has been set in Defender
 Will assign to the user the "punish role" and deliver the "punish message" that have been set in Defender (see `[p]dset general`)  
 **Accepts:** Nothing  
 **Context:** `message`  
+* `timeout-user`  
+Will timeout the user for a set amount of time. The timeout can also be removed.  
+**Accepts:** A string representing the timeout time. Some examples: '5 minutes', '2 hours', '4 days'. Passing nothing will remove the timeout.   
+**Context:** `user`  
 * `get-user-info`  
 Gets an attribute from an arbitrary user and assigns it to a variable. Many of the [standard discord.py Member attributes](https://discordpy.readthedocs.io/en/latest/api.html#discord.Member) are supported.  
 Additionally, the attributes  
@@ -330,6 +344,25 @@ Will set (or deactivate) slowmode of the channel in the context's message
 Will toggle emergency mode  
 **Accepts:** A bool (true or false), representing whether emergency mode should be enabled or disabled  
 **Context:** Any  
+
+### Thread actions
+
+* `archive-thread`  
+Will archive a thread  
+**Accepts:** Nothing   
+**Context:** `message`  
+* `lock-thread`  
+Will lock a thread  
+**Accepts:** Nothing   
+**Context:** `message`  
+* `archive-and-lock-thread`  
+Will archive and lock a thread  
+**Accepts:** Nothing   
+**Context:** `message`  
+* `delete-thread`  
+Will delete a thread  
+**Accepts:** Nothing   
+**Context:** `message`  
 
 ### Heat level actions
 
