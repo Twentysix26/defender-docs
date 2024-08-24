@@ -278,7 +278,7 @@ Note: Since Defender 2.0 `$channel_*` context variables can also refer to a thre
   | `$user_created_at` | The date and time in which the user created the account  |
   | `$user_joined_at` | The date and time in which the user joined the server |
   | `$user_heat` | The user's [heat level](#heat-level) |
-  | `$message` | The raw message content. Mentions are automatically escaped |
+  | `$message` | The raw message content. Mentions are automatically escaped with a zero width space (`\u200b`) |
   | `$message_clean` | The message content. Mentions are transformed into the way the client shows it |
   | `$message_id` | The message's ID |
   | `$message_created_at` | The date and time in which the message was created |
