@@ -25,8 +25,7 @@ graph TD
   A -.- B[(Invite filter)]
   A -.- C[(Join monitor)];
   A -.- D[(Raider detection)];
-  A -.- E[(Comment analysis)];
-  A -.- F[(Warden)];
+  A -.- E[(Warden)];
   G[Manual modules];
   G -.- H[(Alert)]
   G -.- I[(Vaporize)];
@@ -43,7 +42,6 @@ graph TD
     | Invite filter       | Detects and takes action on unwanted Discord invites posted in your community |
     | Join monitor       | Detects surges of users joining your server and notifies the staff about newly created accounts. It can also raise your server's verification level if it detects a raid. |
     | Raider detection    | Also commonly referred as antispam / antiraid, it takes action on users spamming messages. |
-    | Comment analysis    | Leverages the power of machine learning to detect a wide range of potentially unwanted messages. Powered by Google's Perspective API. |
     | Warden    | A complex module that lets you define *rules*. Rules are sets of *conditions* and *actions* that you can define to automate moderation, monitoring and much more. If something isn't covered by the other modules, it can probably be done with Warden.|
 
 === "Manual modules"
